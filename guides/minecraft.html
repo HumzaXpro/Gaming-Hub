@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Hub</title>
+    <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #fff;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: top 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 35px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        nav a:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover:before {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff5722;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .button {
+            background: #ffcc00;
+            color: #000;
+            width: 200px;
+            height: 50px;
+            font-weight: bold;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.3s ease-in-out;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button_content {
+            color: #000;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+  	    position: relative;
+  	    display: inline-block;
+  	    margin-top: 15px; /* Adjust this value as needed */
+	}
+
+	.dropdown-content {
+ 	    display: block;
+  	    position: absolute;
+  	    background-color: #007bff;
+  	    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+ 	    z-index: 1;
+ 	    top: 38px;
+ 	    opacity: 0;
+ 	    transition: opacity 0.3s ease, max-height 0.3s ease; /* Add max-height transition */
+ 	    max-height: 0; /* Initially hide the dropdown */
+ 	    overflow: hidden; /* Hide overflowing content */
+	}
+
+	.dropdown:hover .dropdown-content {
+  	    opacity: 1;
+  	    max-height: 1500px; /* Adjust the value to accommodate your dropdown content */
+	}
+
+        .dropdown-content a {
+          color: #fff; /* Set text color for dropdown options */
+          text-decoration: none;
+          display: block;
+          padding: 20px 30px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: left;
+            margin-left: 35px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../home.html">Home</a>
+            <a href="../games.html">Games</a>
+            <a href="../news.html">News</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">FAQ</a>
+                <div class="dropdown-content">
+                    <a href="../faq/minecraft.html">Minecraft</a>
+                    <a href="../faq/gta5.html">GTA V</a>
+                    <a href="../faq/rdr2.html">Red Dead Redemption II</a>
+                    <a href="../faq/amongus.html">Among Us</a>
+                    <a href="../faq/pubg.html">PUBG</a>
+                    <a href="../faq/lastofus.html">Last of Us</a>
+                    <a href="../faq/cyberpunk.html">Cyberpunk</a>
+                    <a href="../faq/spiderman2.html">Spiderman 2</a>
+                    <a href="../faq/fh5.html">Forza Horizon 5</a>
+                    <a href="../faq/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Guides</a>
+                <div class="dropdown-content">
+                    <a href="minecraft.html">Minecraft</a>
+                    <a href="gta5.html">GTA V</a>
+                    <a href="rdr2.html">Red Dead Redemption II</a>
+                    <a href="amongus.html">Among Us</a>
+                    <a href="pubg.html">PUBG</a>
+                    <a href="lastofus.html">Last of Us</a>
+                    <a href="cyberpunk.html">Cyberpunk</a>
+                    <a href="spiderman2.html">Spiderman 2</a>
+                    <a href="fh5.html">Forza Horizon 5</a>
+                    <a href="fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <a href="../aboutus.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container" style="padding: 50px 50px; font-size:17px;">
+            	<h1>MINECRAFT GUIDE</h1>
+                <div style="text-align: left;">
+                <br>
+		<h2>Getting Started:</h2>
+		<b>Controls:</b> Familiarize yourself with the controls for your platform (PC, console, mobile). This includes movement, interacting with objects, and crafting.<br>
+		<b>World Creation:</b> Start a new world. You can choose between survival mode (where you gather resources and survive against enemies) or creative mode (where you have unlimited resources and can fly).<br>
+		<b>Exploration:</b> Begin by exploring your surroundings. Look for trees to gather wood, which is essential for crafting tools and building shelter.<br>
+
+		<h2>Gathering Resources:</h2>
+		<b>Wood:</b> Use your hands to punch trees and gather wood blocks. Craft wood planks from these blocks, which are used in many basic recipes.<br>
+		<b>Tools:</b> Craft basic tools like a wooden pickaxe, axe, and shovel using wood planks and sticks. These tools will help you gather resources more efficiently.<br>
+		<b>Mining:</b> Dig underground to find resources like coal, iron, and stone. Use a pickaxe to mine these blocks.<br>
+
+		<h2>Building Shelter:</h2>
+		<b>First Night:</b> Build a simple shelter before nightfall to protect yourself from hostile mobs like zombies and skeletons.<br>
+		<b>Materials:</b> Use wood, dirt, or any other readily available blocks to build a basic shelter. You can expand and improve it later.<br>
+
+		<h2>Crafting:</h2>
+		<b>Crafting Table:</b> Craft a crafting table from wooden planks. This will allow you to access more crafting recipes.<br>
+		<b>Recipes:</b> Experiment with different combinations of materials in the crafting table to craft tools, weapons, armor, and other items.<br>
+
+		<h2>Surviving:</h2>
+		<b>Food:</b> Hunt animals or gather crops to obtain food. Eating replenishes your health and hunger bars.<br>
+		<b>Combat:</b> Defend yourself against hostile mobs using weapons like swords and bows. Armor provides protection from damage.<br>
+		<b>Health and Hunger:</b> Keep an eye on your health and hunger bars. Eat food when your hunger bar is low to avoid starvation.<br>
+
+		<h2>Exploration and Advancement:</h2>
+		<b>Biomes:</b> Explore different biomes like forests, deserts, and oceans to find unique resources and structures.<br>
+		<b>Villages and Structures:</b> Discover villages, temples, and dungeons scattered throughout the world. These often contain valuable loot.<br>
+		<b>The Nether and The End:</b> Progress through the game by exploring the Nether and The End dimensions, where you'll encounter new challenges and enemies.<br>
+
+		<h2>Advanced Gameplay:</h2>
+		<b>Redstone:</b> Experiment with redstone, Minecraft's equivalent of electricity, to create complex contraptions and automated systems.<br>
+		<b>Enchanting and Brewing:</b> Learn how to enchant weapons and armor for powerful buffs, and brew potions for various effects.<br>
+		<b>Endgame:</b> Set your own goals, whether it's defeating the Ender Dragon, building elaborate structures, or completing achievements.<br>
+            </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Gaming Hub</p>
+    </footer>
+</body>
+</html>

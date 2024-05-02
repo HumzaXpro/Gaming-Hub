@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Hub - Games</title>
+    <style>
+        body {
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: white;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: top 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 35px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        nav a:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover:before {
+            width: 100%;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+  	    position: relative;
+  	    display: inline-block;
+  	    margin-top: 15px; /* Adjust this value as needed */
+	}
+
+	.dropdown-content {
+ 	    display: block;
+  	    position: absolute;
+  	    background-color: #007bff;
+  	    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+ 	    z-index: 1;
+ 	    top: 38px;
+ 	    opacity: 0;
+ 	    transition: opacity 0.3s ease, max-height 0.3s ease; /* Add max-height transition */
+ 	    max-height: 0; /* Initially hide the dropdown */
+ 	    overflow: hidden; /* Hide overflowing content */
+	}
+
+	.dropdown:hover .dropdown-content {
+  	    opacity: 1;
+  	    max-height: 1500px; /* Adjust the value to accommodate your dropdown content */
+	}
+
+        .dropdown-content a {
+          color: #fff; /* Set text color for dropdown options */
+          text-decoration: none;
+          display: block;
+          padding: 20px 30px;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 7px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .button {
+            background: white;
+            color: #ffffff;
+            width: 240px;
+            height: 327px;
+            font-weight: bold;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.3s ease-in-out;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        .button_content {
+            color: black;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .button:hover {transform: scale(1.1)}
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+      h1 {
+        font-size: 37px;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="games.html">Games</a>
+            <a href="news.html">News</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">FAQ</a>
+                <div class="dropdown-content">
+                    <a href="faq/minecraft.html">Minecraft</a>
+                    <a href="faq/gta5.html">GTA V</a>
+                    <a href="faq/rdr2.html">Red Dead Redemption II</a>
+                    <a href="faq/amongus.html">Among Us</a>
+                    <a href="faq/pubg.html">PUBG</a>
+                    <a href="faq/lastofus.html">Last of Us</a>
+                    <a href="faq/cyberpunk.html">Cyberpunk</a>
+                    <a href="faq/spiderman2.html">Spiderman 2</a>
+                    <a href="faq/fh5.html">Forza Horizon 5</a>
+                    <a href="faq/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Guides</a>
+                <div class="dropdown-content">
+                    <a href="guides/minecraft.html">Minecraft</a>
+                    <a href="guides/gta5.html">GTA V</a>
+                    <a href="guides/rdr2.html">Red Dead Redemption II</a>
+                    <a href="guides/amongus.html">Among Us</a>
+                    <a href="guides/pubg.html">PUBG</a>
+                    <a href="guides/lastofus.html">Last of Us</a>
+                    <a href="guides/cyberpunk.html">Cyberpunk</a>
+                    <a href="guides/spiderman2.html">Spiderman 2</a>
+                    <a href="guides/fh5.html">Forza Horizon 5</a>
+                    <a href="guides/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <a href="aboutus.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <div class="button-wrapper">
+        <div class="button">
+            <a href="games/minecraft.html">
+            <img src="logos/mc.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Minecraft</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2011</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/amongus.html">
+            <img src="logos/amongus.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Among Us</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2018</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/gta5.html">
+            <img src="logos/gta5.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">GTA V</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2013</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/rdr2.html">
+            <img src="logos/rdr2.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:13px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Red Dead Redemption II</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2018</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/fh5.html">
+            <img src="logos/fh5.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Forza Horizon 5</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2021</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="button-wrapper">
+        <div class="button">
+            <a href="games/cod-mw2.html">
+            <img src="logos/cod-mw.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:11px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Call of Duty Modern Warfare 2</span>
+                <span style="float:right; font-size:11px; margin-top:4px; margin-right:3px">2019</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/spiderman2.html">
+            <img src="logos/spiderman2.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px"; text-align: center'>
+                <span style="float:left; margin-bottom:5px">Spiderman 2</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2023</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/far-cry3.html">
+            <img src="logos/far cry.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Far Cry 3</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2012</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/fortnite.html">
+            <img src="logos/fortnite.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Fortnite</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2017</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/pubg.html">
+            <img src="logos/pubg.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">PUBG</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2018</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="button-wrapper">
+        <a href="games/tekken8.html">
+        <div class="button">
+            <img src="logos/tekken 8.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Tekken 8</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2024</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/sf6.html">
+            <img src="logos/street fighter.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Street Fighter 6</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2023</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/subway-surfers.html">
+            <img src="logos/subway surfers.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Subway Surfers</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2012</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/uncharted4.html">
+            <img src="logos/uncharted4.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Uncharted 4</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2016</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/skyrim.html">
+            <img src="logos/skyrim.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Skyrim</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2011</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+    </div>
+
+    <div class="button-wrapper">
+        <div class="button">
+            <a href="games/lastofus.html">
+            <img src="logos/last of us.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">The Last of Us</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2023</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+            <a href="games/fh4.html">
+            <img src="logos/fh4.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Forza Horizon 4</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2018</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+            <a href="games/apex-legends.html">
+            <img src="logos/apex legends.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Apex Legends</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2018</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+            <a href="games/zelda.html">
+            <img src="logos/zelda.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Zelda</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2023</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/destiny2.html">
+            <img src="logos/destiny2.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Destiny 2</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2017</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+    </div>
+
+    <div class="button-wrapper">
+        <div class="button">
+	    <a href="games/gow.html">
+            <img src="logos/god of war.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">God of War</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2005</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/dl2.html">
+            <img src="logos/dying light2.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Dying Light 2</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2022</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/doom.html">
+            <img src="logos/doom.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">DOOM</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2020</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/gog.html">
+            <img src="logos/guardians of the galaxy.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Guardians of the Galaxy</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2014</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/palworld.html">
+            <img src="logos/palworld.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Palworld</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2024</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+    </div>
+
+    <div class="button-wrapper">
+        <div class="button">
+	    <a href="games/tomb-raider.html">
+            <img src="logos/shadow of the tomb raider.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:13px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Shadow of the Tomb Raider</span>
+                <span style="float:right; font-size:11px; margin-top:4px; margin-right:3px">2018</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/cyberpunk.html">
+            <img src="logos/cyberpunk.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Cyberpunk 2077</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2020</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/horizon.html">
+            <img src="logos/horizon zero dawn.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Horizon Zero Dawn</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2017</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/re8.html">
+            <img src="logos/re8.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Resident Evil Village</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2021</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/hwl.html">
+            <img src="logos/hogwards legeacy.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Hogwards Legeacy</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2017</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+    </div>
+
+    <div class="button-wrapper">
+        <div class="button">
+	    <a href="games/raft.html">
+            <img src="logos/raft.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Raft</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2022</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/fifa23.html">
+            <img src="logos/fifa23.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">FIFA 23</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2022</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/sf.html">
+            <img src="logos/sf.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Sons of the Forest</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2024</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/grounded.html">
+            <img src="logos/grounded.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Grounded</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2022</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+
+        <div class="button">
+            <a href="games/bngd.html">
+            <img src="logos/beamng.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">BeamNG Drive</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2015</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <div class="button-wrapper">
+        <div class="button">
+	    <a href="games/hff.html">
+            <img src="logos/hff.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Human Fall Flat</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2016</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/fs22.html">
+            <img src="logos/fs22.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Farming Simulator 22</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2021</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/mk11.html">
+            <img src="logos/mortal kombat.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Mortal Kombat 11</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2019</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+	    <a href="games/metro-exodus.html">
+            <img src="logos/metro exodus.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Metro Exodus</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2019</span>
+                <div style="clear:both"></div>
+            </div>
+	    </a>
+        </div>
+
+        <div class="button">
+            <a href="games/mfs.html">
+            <img src="logos/mfs.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+            <div class="button_content" style="font-size:13px; margin-left:3px; margin-bottom:3px">
+                <span style="float:left; margin-bottom:5px">Microsoft Flight Simulator</span>
+                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">1982</span>
+                <div style="clear:both"></div>
+            </div>
+            </a>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Gaming Hub</p>
+    </footer>
+</body>
+</html>

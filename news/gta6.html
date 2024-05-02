@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Hub</title>
+    <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #fff;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: top 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 35px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        nav a:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover:before {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff5722;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .button {
+            background: #ffcc00;
+            color: #000;
+            width: 200px;
+            height: 50px;
+            font-weight: bold;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.3s ease-in-out;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button_content {
+            color: #000;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+  	    position: relative;
+  	    display: inline-block;
+  	    margin-top: 15px; /* Adjust this value as needed */
+	}
+
+	.dropdown-content {
+ 	    display: block;
+  	    position: absolute;
+  	    background-color: #007bff;
+  	    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+ 	    z-index: 1;
+ 	    top: 38px;
+ 	    opacity: 0;
+ 	    transition: opacity 0.3s ease, max-height 0.3s ease; /* Add max-height transition */
+ 	    max-height: 0; /* Initially hide the dropdown */
+ 	    overflow: hidden; /* Hide overflowing content */
+	}
+
+	.dropdown:hover .dropdown-content {
+  	    opacity: 1;
+  	    max-height: 1500px; /* Adjust the value to accommodate your dropdown content */
+	}
+
+        .dropdown-content a {
+          color: #fff; /* Set text color for dropdown options */
+          text-decoration: none;
+          display: block;
+          padding: 20px 30px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: left;
+            margin-left: 35px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../home.html">Home</a>
+            <a href="../games.html">Games</a>
+            <a href="../news.html">News</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">FAQ</a>
+                <div class="dropdown-content">
+                    <a href="../faq/minecraft.html">Minecraft</a>
+                    <a href="../faq/gta5.html">GTA V</a>
+                    <a href="../faq/rdr2.html">Red Dead Redemption II</a>
+                    <a href="../faq/amongus.html">Among Us</a>
+                    <a href="../faq/pubg.html">PUBG</a>
+                    <a href="../faq/lastofus.html">Last of Us</a>
+                    <a href="../faq/cyberpunk.html">Cyberpunk</a>
+                    <a href="../faq/spiderman2.html">Spiderman 2</a>
+                    <a href="../faq/fh5.html">Forza Horizon 5</a>
+                    <a href="../faq/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Guides</a>
+                <div class="dropdown-content">
+                    <a href="../guides/minecraft.html">Minecraft</a>
+                    <a href="../guides/gta5.html">GTA V</a>
+                    <a href="../guides/rdr2.html">Red Dead Redemption II</a>
+                    <a href="../guides/amongus.html">Among Us</a>
+                    <a href="../guides/pubg.html">PUBG</a>
+                    <a href="../guides/lastofus.html">Last of Us</a>
+                    <a href="../guides/cyberpunk.html">Cyberpunk</a>
+                    <a href="../guides/spiderman2.html">Spiderman 2</a>
+                    <a href="../guides/fh5.html">Forza Horizon 5</a>
+                    <a href="../guides/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <a href="../aboutus.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+	    <div class="container" style="font-size:18px;">
+                <h1 style="font-size:45px;">GTA 6: Everything we know so far</h1>
+                <p>The GTA 6 trailer is here and it has confirmed the Grand Theft Auto 6 location, characters, and release window</p>
+		<img src="images/gta6/gta6(1).jpg" style="width:899px; height:500px;">
+		<p style="margin-top:40px;">GTA 6 is coming in 2025, with Rockstar Games taking us back to the sun-soaked streets of Vice City. The reveal of the first official GTA 6 trailer gave us a pretty spectacular look at Leonida, hinting towards some of the wild sights and sounds that the state will have to offer us.</p>
+		<p>If you're looking for more insight into the trailer, you'll want to check out our in-depth GTA 6 trailer breakdown. In it, we try to unpick some story details about Lucia – the protagonist leading Grand Theft Auto 6 – as well as get a better sense of the sort of scale which Rockstar is striving for. It's all exceptionally impressive, and there's plenty to dig into. So with that in mind, you'll want to keep on reading to find everything you need to know about GTA 6 ahead of its release next year. </p>
+		<p style="margin-bottom:40px;">The GTA 6 reveal trailer is here and it is everything that we hoped it would be. While Rockstar had originally set the GTA 6 trailer release date for Tuesday, December 5, a leak pushed the publisher to get the long-awaited first look at the new Grand Theft Auto out into the world a little earlier. The GTA 6 trailer, which you can view above, gives us a first look at the return to Vice City and the new twin-protagonists. </p>
+		<h2 style="font-size:28px;">GTA 6 release date speculation: All eyes on 2025</h2>
+		<img src="images/gta6/gta6(2).jpg" style="width:899px; height:500px;">
+		<p style="margin-top:40px;">Rockstar has confirmed that the GTA 6 release date is set for 2025. The news arrived as part of the reveal trailer, noting that Grand Theft Auto 6 is set to release TBC 2025 – no further clarification has been posted on when. </p>
+		<p>Prior to the reveal trailer, internet sleuths had been making some educated guesses. Multiple sources have corroborated a rumor that GTA 6 will release in 2025, which was part of a larger info drop that suggested that Grand Theft Auto 6 would be set in a modern-day Vice City. </p>
+		<p>Interestingly, Take-Two, the Rockstar owner, continues to imply GTA 6 is out by March 2025 while saying nothing about it. CEO Strauss Zelnick says "we remain confident that we are positioning our business for a significant inflection point in fiscal 2025, which we believe will include new record levels of operating performance." That significant boost to revenue predictions is supposedly due to the GTA 6 launch. </p>
+		<p>However, there's a new report via Kotaku that suggest Rockstar is worried production on GTA 6 is falling behind, and could impact the 2025 release date. Rockstar has moved all of its employees back to full-time in-office work five days a week, which multiple of its developers have expressed concern about, particularly when it comes to the potential effects on the sequel. Fall 2025 is now looking more realistic than Spring 2025, but we'll have to wait for more news from Rockstar before we can know more officially. </p>
+		<h2 style="font-size:28px;">GTA 6 platforms: PS5 and Xbox Series X/S confirmed</h2>
+		<img src="images/gta6/gta6(3).jpg" style="width:899px; height:500px;">
+		<p style="margin-top:40px; margin-bottom:40px;">So far, it has been confirmed that GTA 6 will be coming to PS5 and Xbox Series X/S when it arrives. The news came by way of an official press release from Take Two, which states that: "GTA 6 is coming to PlayStation 5 computer entertainment systems and Xbox Series X|S games and entertainment systems in 2025".</p>
+		<h2 style="font-size:28px;">Will GTA 6 be on PS4 and Xbox One?</h2>
+		<p style="margin-bottom:40px;">As revealed in the official press release, GTA 6 is currently only slated to arrive on the PS5 and Xbox Series X and won't be coming to PS4 or Xbox One when it launches in 2025 - making it a current-gen exclusive. </p>
+		<h2 style="font-size:28px;">What's happening with the GTA 6 PC release?</h2>
+		<img src="images/gta6/gta6(4).jpg" style="width:899px; height:500px;">
+		<p style="margin-top:40px;">There's currently no mention of a PC launch, which might suggest it will follow a similar route to some of the previous GTA games that released on consoles first, before arriving on PC at a later date.</p>
+		<p style="margin-bottom:40px;">We wouldn't hold your breath for a quick PC release follow-up either, as according to a former developer, GTA 6 on PC will likely take a while, with PS5 taking priority as Rockstar focuses on "what sells". That's corroborated by another former developer, who said the GTA 6 PC launch probably won't come for "a long time".</p>
+		<h2 style="font-size:28px;">GTA 6 characters: Introducing Lucia</h2>
+		<p style="margin-bottom:40px;">During the official trailer, we were introduced to the protagonists of GTA 6, with a focus on the the first GTA 6 female lead, Lucia. While there's still much we've yet to learn about her as a character, the trailer gives us some hints, with her wearing prison clothing, which tells us she's clearly had some trouble with the law. Not only on that, but Lucia is shown on multiple occasions with an unnamed male character, who looks set to be play a main role in the next entry - while he's been unofficially referred to as both Jason and James in the past, we've not had confirmation on his name. The pair appear to share a bond, or a kind of Bonnie and Clyde-like relationship, and speak of trust as they get stuck into some crime together. </p>
+		<h2 style="font-size:28px;">GTA 6 location: We're heading back to Vice City</h2>
+		<img src="images/gta6/gta6(5).jpg" style="width:899px; height:500px;">
+		<p style="margin-top:40px;">GTA 6 is taking us back to Vice City. While the original game was set in 1986, this new 2025 release is set to take place in what appears to be a modern day setting. Rockstar revealed we'll be heading to the state of Leonida which is "home to the neon-soaked streets of Vice City and beyond". Set to be the "biggest, most immersive evolution of Grand Theft Auto yet", Vice City appears to be a part of a bigger map that will form GTA 6. </p>
+		<p>The trailer has already given us a glimpse of a Vice City made prettier than ever, with a take on rural Florida that's every bit as chaotic as the real thing. With some familiar spots such as Starfish Island, we'll have to wait and see if we're able to visit old haunts like the Malibu Club, Ocean View Hotel, Little Haiti, remains to be seen. </p>
+		<p style="margin-bottom:40px;">As we saw in the trailer, it's Fans have already been comparing the new trailer to the locations from the original Vice City, which demonstrates how incredibly detailed the updated take on the location is. </p>
+		<h2 style="font-size:28px;">GTA 6 announcement: When was GTA 6 confirmed?</h2>
+		<img src="images/gta6/gta6(6).jpg" style="width:899px; height:500px;">
+		<p style="margin-top:40px;">The first GTA 6 announcement came in February 2022, when Rockstar Games snuck out the news that GTA 6 is "well underway" as part of a broader GTA 5 and GTA Online Community Update. With word that Grand Theft Auto 6 is in "active development", Rockstar said: "On behalf of our entire team, we thank you all for your support and cannot wait to step into the future with you!"</p>
+		<p style="margin-bottom:40px;">In August 2022, Rockstar's parent company Take-Two Interactive reaffirmed that GTA 6 development is "well underway" as part of the company's financial results report. Take-Two CEO Strauss Zelnick made some big promises for what GTA 6 will achieve: "With development of the next entry in the Grand Theft Auto series well underway, the Rockstar Games team is determined to once again set creative benchmarks for the series, our industry, and for all entertainment, just as the label has done with every one of their frontline releases."</p>
+		<h2 style="font-size:28px;">GTA 6 News</h2>
+		<img src="images/gta6/gta6(7).jpg" style="width:899px; height:500px;">
+		<p style="margin-top:40px; margin-bottom:40px;">There hasn't been any official GTA 6 news since the official announcement in February 2022, but that is classic Rockstar Games. We have, of course, had the massive leak - which you can read about below - and responses to that leak, but otherwise the developer has been pretty quiet on the highly-anticipated sequel. </p>
+		<h2 style="font-size:28px;">GTA 6 leaks: Are the new GTA 6 leaks real?</h2>
+		<img src="images/gta6/gta6(8).jpg" style="width:899px; height:500px;">
+		<p style="margin-top:40px;">There was an unprecedented GTA 6 leak on September 18, 2022, which saw dozens of videos and screenshots from an alleged in-development build of the game spread online. Are you wondering whether the GTA 6 leaks are real? Well, Rockstar has since issued a statement confirming the hack: "We recently suffered a network intrusion in which an unauthorized third party illegally accessed and downloaded confidential information from our systems, including early development footage for the next Grand Theft Auto."</p>
+		<p>"We are extremely disappointed to have any details of our next game shared with you all in this way," the Rockstar statement continues. "We will update everyone again soon and, of course, will properly introduce you to this next game when it's ready. We want to thank everyone for their ongoing support through this situation." </p>
+		<p>In the 48 hours since the GTA 6 leak first appeared, the GTA Forums have worked to scrub all remnants of the illegally obtained screenshots and videos to avoid being "obliterated by Rockstar". The dedicated GTA 6 reddit has also taken all links, pictures, and videos of the leak offline, and has committed to staying online with one condition: "We will allow discussions related to the leak without attaching the leaks. We don't allow comments that has [sic] download links to the leak."</p>
+		<p>Since then, Rockstar and parent company Take-Two have spoken out about the leaks. In a recent earnings call, CEO of GTA publisher Take-Two Interactive, Strauss Zelnick said that the leak was "terribly unfortunate", before adding that "we take those sorts of incidents very seriously indeed". </p>
+		<p>"There's no evidence that any material assets were taken, which is a good thing, and certainly the leak won't have any influence on development or anything of the sort. But it is terribly disappointing, and causes us to be ever more vigilant on matters relating to cybersecurity."</p>
+		<p>The latest update on all of this is that the teenager accused of massive GTA 6 leak has been deemed psychiatrically unfit for trial. Reuters reports that 18-year-old Arion Kurtaj, a member of the Lapsus$ hacking group has been assessed by psychiatrists who have deemed him unfit to stand trial for himself.</p>
+		<p>Interestingly, there's one leaked GTA 6 screenshot that is the sole survival of a Rockstar copyright "nuke". Seems like just a single frame has escaped the all-encompassing copyright claims Rockstar has waved across the internet. </p>
+		<h2 style="font-size:28px;">Will GTA 6 be delayed? </h2>
+		<img src="images/gta6/gta6(9).jpg" style="width:899px; height:500px;">
+		<p style="margin-top:40px; margin-bottom:40px;">In the immediate aftermath of the new GTA 6 leak, there was some concern over how the intrusion would impact ongoing development of the new Grand Theft Auto game. Rockstar has since confirmed in an official statement that the hack will not affect GTA 6 production, or the ongoing security of GTA 5 and GTA Online. "At this time, we do not anticipate any disruption to our live game services nor any long-term effect on the development of our ongoing projects [...] Our work on the next Grand Theft Auto game will continue as planned and we remain as committed as ever to delivering an experience to you, our players, that truly exceeds your expectations." </p>
+		<h2 style="font-size:28px;">GTA 6 map</h2>
+		<img src="images/gta6/gta6(10).jpg" style="width:899px; height:500px;">
+		<p style="margin-top:40px;">While the final GTA 6 map is yet to be shown, there are some indicators from the leaked video and screens that indicate a play space that stretches beyond the confines of Vice City. Much in the same way Rockstar expanded upon Los Santos between Grand Theft Auto: San Andreas and GTA 5, a few of the leaked screenshots appear to show all-new areas of Vice City. As you may know, Vice City itself is loosely based on Miami, and there's now speculation that GTA 6 will push further south toward the Everglades (a wetland) and the Florida Keys (a string of tropical islands). Now, the "Gator Keys" were referenced in the original GTA: Vice City as part of a radio broadcast, but the location was never shown in-game. If the screenshots suggest what we think they are, expect the GTA 6 map to contain a mixture of environment types. </p>
+		<p style="margin-bottom:40px;">Interestingly, fans are convinced that the GTA 6 map will be much larger than that of GTA 5. Using leaked GTA 6 coordinates, the GTA 6 subreddit fans are trying to map out the map itself, and later started stitching GTA 6's map together using Google Earth and Paint. Clever folks.</p>
+		<h2 style="font-size:28px;">GTA 6 gameplay</h2>
+		<img src="images/gta6/gta6(11).jpg" style="width:899px; height:500px;">
+		<p>As Rockstar is yet to release an unvarnished GTA 6 gameplay trailer, it's difficult for us to say with certainty how this new game will play and how it will innovate on Grand Theft Auto 5. However, it's clear from the early development footage which leaked out that Rockstar is at least investigating and playtesting some new mechanics. For example, it appears that a new series of stealth mechanics are being introduced – with footage depicting characters crawling while prone, and even carrying bodies. </p>
+		<p>Additionally, the weapon wheel – which was overhauled for GTA 5 – is returning in some capacity, and the leaked footage suggests that Rockstar is introducing new health buff items such as painkillers. We can also see that the Five Star 'Wanted' system is returning, and that the VCPD have improved AI routines for tracking Jason and Lucia after you get on their radar. </p>
+	    </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <p>&copy; 2024 Gaming Hub</p>
+    </footer>
+</body>
+</html>

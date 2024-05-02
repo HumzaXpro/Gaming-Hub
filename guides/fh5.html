@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Hub</title>
+    <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #fff;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: top 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 35px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        nav a:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover:before {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff5722;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .button {
+            background: #ffcc00;
+            color: #000;
+            width: 200px;
+            height: 50px;
+            font-weight: bold;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.3s ease-in-out;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button_content {
+            color: #000;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+  	    position: relative;
+  	    display: inline-block;
+  	    margin-top: 15px; /* Adjust this value as needed */
+	}
+
+	.dropdown-content {
+ 	    display: block;
+  	    position: absolute;
+  	    background-color: #007bff;
+  	    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+ 	    z-index: 1;
+ 	    top: 38px;
+ 	    opacity: 0;
+ 	    transition: opacity 0.3s ease, max-height 0.3s ease; /* Add max-height transition */
+ 	    max-height: 0; /* Initially hide the dropdown */
+ 	    overflow: hidden; /* Hide overflowing content */
+	}
+
+	.dropdown:hover .dropdown-content {
+  	    opacity: 1;
+  	    max-height: 1500px; /* Adjust the value to accommodate your dropdown content */
+	}
+
+        .dropdown-content a {
+          color: #fff; /* Set text color for dropdown options */
+          text-decoration: none;
+          display: block;
+          padding: 20px 30px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: left;
+            margin-left: 35px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../home.html">Home</a>
+            <a href="../games.html">Games</a>
+            <a href="../news.html">News</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">FAQ</a>
+                <div class="dropdown-content">
+                    <a href="../faq/minecraft.html">Minecraft</a>
+                    <a href="../faq/gta5.html">GTA V</a>
+                    <a href="../faq/rdr2.html">Red Dead Redemption II</a>
+                    <a href="../faq/amongus.html">Among Us</a>
+                    <a href="../faq/pubg.html">PUBG</a>
+                    <a href="../faq/lastofus.html">Last of Us</a>
+                    <a href="../faq/cyberpunk.html">Cyberpunk</a>
+                    <a href="../faq/spiderman2.html">Spiderman 2</a>
+                    <a href="../faq/fh5.html">Forza Horizon 5</a>
+                    <a href="../faq/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Guides</a>
+                <div class="dropdown-content">
+                    <a href="minecraft.html">Minecraft</a>
+                    <a href="gta5.html">GTA V</a>
+                    <a href="rdr2.html">Red Dead Redemption II</a>
+                    <a href="amongus.html">Among Us</a>
+                    <a href="pubg.html">PUBG</a>
+                    <a href="lastofus.html">Last of Us</a>
+                    <a href="cyberpunk.html">Cyberpunk</a>
+                    <a href="spiderman2.html">Spiderman 2</a>
+                    <a href="fh5.html">Forza Horizon 5</a>
+                    <a href="fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <a href="../aboutus.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container" style="padding: 50px 50px; font-size:17px;">
+            	<h1>FORZA HORIZON GUIDES</h1>
+		<b>Vehicle Selection:</b> Choose your preferred car from a wide range of vehicles, including sports cars, supercars, off-road vehicles, and more.<br>
+		<b>Difficulty Settings:</b> Adjust the difficulty settings to suit your preferences, including driving assists, opponent skill level, and race length.<br>
+		<h2>Exploration and Open World:</h2>
+		<b>Horizon Festival:</b> Explore the open world of Forza Horizon, which features a diverse landscape including cities, countryside, mountains, and beaches.<br>
+		<b>Discover Points of Interest:</b> Seek out points of interest such as scenic vistas, landmarks, and hidden collectibles scattered throughout the map.<br>
+		<h2>Events and Races:</h2>
+		<b>Race Types:</b> Participate in a variety of events and races, including circuit races, point-to-point races, off-road races, and showcase events.<br>
+		<b>Event Types:</b> Compete in traditional races, time trials, drift challenges, and more to earn credits, experience points, and rewards.<br>
+		<h2>Customization and Tuning:</h2>
+		<b>Car Customization:</b> Customize your vehicle with a wide range of options, including paint jobs, decals, rims, and body kits.<br>
+		<b>Tuning:</b> Fine-tune your car's performance to suit different race conditions and driving styles. Adjust settings such as tire pressure, gear ratios, suspension, and aerodynamics.<br>
+		<h2>Progression and Rewards:</h2>
+		<b>Earn Credits and XP:</b> Complete races, challenges, and events to earn credits and experience points (XP). Use credits to purchase new cars, upgrades, and customization items.<br>
+		<b>Level Up:</b> Level up your Horizon Life progression to unlock new events, cars, and features. Progress through different tiers of the Horizon Festival to access more prestigious events and rewards.<br>
+		<h2>Drifting and Skill Challenges:</h2>
+		<b>Drift Zones:</b> Test your drifting skills in designated drift zones scattered throughout the map. Score points by maintaining long drifts and achieving high speeds.<br>
+		<b>Skill Chains:</b> Build skill chains by performing stunts, drifting, near misses, and other skillful maneuvers while driving. Keep your chain going to earn bonus points and rewards.<br>
+		<h2>Online Multiplayer:</h2>
+		<b>Online Modes:</b> Join online multiplayer sessions to race against other players, compete in challenges, and participate in cooperative events.<br>
+		<b>Horizon Life:</b> Interact with other players in the shared open world of Forza Horizon. Join clubs, share liveries, and participate in community events and challenges.<br>
+		<h2>Seasons and Events:</h2>
+		<b>Dynamic Seasons:</b> Experience dynamic changes in weather and seasons that affect driving conditions and gameplay. Adapt your driving style to rain, snow, and other weather conditions.<br>
+		<b>Seasonal Events:</b> Take part in seasonal events and challenges that rotate regularly, offering unique rewards and experiences based on the current season.<br>
+		<h2>Community and Content Creation:</h2>
+		<b>Creative Hub:</b> Access the Creative Hub to discover user-generated content, including custom races, liveries, and tuning setups.<br>
+		<b>Content Creator:</b> Use the Content Creator tools to design and share your own custom races and events with the Forza Horizon community.<br>
+		<h2>Achievements and Challenges:</h2>
+		<b>Complete Challenges:</b> Pursue in-game challenges and achievements to test your skills and unlock rewards. Challenge yourself to achieve high scores, complete specific races, and master different driving disciplines.<br>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Gaming Hub</p>
+    </footer>
+</body>
+</html>

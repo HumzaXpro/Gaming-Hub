@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Hub</title>
+    <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #fff;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: top 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 35px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        nav a:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover:before {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff5722;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .button {
+            background: #ffcc00;
+            color: #000;
+            width: 200px;
+            height: 50px;
+            font-weight: bold;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.3s ease-in-out;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button_content {
+            color: #000;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+  	    position: relative;
+  	    display: inline-block;
+  	    margin-top: 15px; /* Adjust this value as needed */
+	}
+
+	.dropdown-content {
+ 	    display: block;
+  	    position: absolute;
+  	    background-color: #007bff;
+  	    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+ 	    z-index: 1;
+ 	    top: 38px;
+ 	    opacity: 0;
+ 	    transition: opacity 0.3s ease, max-height 0.3s ease; /* Add max-height transition */
+ 	    max-height: 0; /* Initially hide the dropdown */
+ 	    overflow: hidden; /* Hide overflowing content */
+	}
+
+	.dropdown:hover .dropdown-content {
+  	    opacity: 1;
+  	    max-height: 1500px; /* Adjust the value to accommodate your dropdown content */
+	}
+
+        .dropdown-content a {
+          color: #fff; /* Set text color for dropdown options */
+          text-decoration: none;
+          display: block;
+          padding: 20px 30px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: left;
+            margin-left: 35px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../home.html">Home</a>
+            <a href="../games.html">Games</a>
+            <a href="../news.html">News</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">FAQ</a>
+                <div class="dropdown-content">
+                    <a href="../faq/minecraft.html">Minecraft</a>
+                    <a href="../faq/gta5.html">GTA V</a>
+                    <a href="../faq/rdr2.html">Red Dead Redemption II</a>
+                    <a href="../faq/amongus.html">Among Us</a>
+                    <a href="../faq/pubg.html">PUBG</a>
+                    <a href="../faq/lastofus.html">Last of Us</a>
+                    <a href="../faq/cyberpunk.html">Cyberpunk</a>
+                    <a href="../faq/spiderman2.html">Spiderman 2</a>
+                    <a href="../faq/fh5.html">Forza Horizon 5</a>
+                    <a href="../faq/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Guides</a>
+                <div class="dropdown-content">
+                    <a href="minecraft.html">Minecraft</a>
+                    <a href="gta5.html">GTA V</a>
+                    <a href="rdr2.html">Red Dead Redemption II</a>
+                    <a href="amongus.html">Among Us</a>
+                    <a href="pubg.html">PUBG</a>
+                    <a href="lastofus.html">Last of Us</a>
+                    <a href="cyberpunk.html">Cyberpunk</a>
+                    <a href="spiderman2.html">Spiderman 2</a>
+                    <a href="fh5.html">Forza Horizon 5</a>
+                    <a href="fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <a href="../aboutus.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container" style="padding: 50px 50px; font-size:17px;">
+            	<h1>AMONG US GUIDE</h1>
+		<b>Objective:</b> In Among Us, players are divided into Crewmates and Impostors. Crewmates must complete tasks around the map while Impostors try to sabotage their efforts and eliminate them.<br>
+		<b>Discussion and Voting:</b> When a dead body is reported or an emergency meeting is called, players discuss suspicions and vote on who they believe is the Impostor.<br>
+		<h2>Roles and Abilities:</h2>
+		<b>Crewmates:</b> Focus on completing tasks, staying observant, and working together to identify Impostors.<br>
+		<b>Impostors:</b> Blend in with Crewmates, sabotage tasks, and eliminate them without getting caught. Impostors can also use vents to quickly move around the map.<br>
+		<h2>Task Completion:</h2>
+		<b>Tasks:</b> Complete various tasks located around the map. Tasks vary in complexity and can include simple actions like swiping a card, connecting wires, or diverting power.<br>
+		<b>Task Bar:</b> Keep an eye on the task bar in the top left corner of the screen. It fills up as tasks are completed, providing evidence of progress to identify suspicious behavior.<br>
+		<h2>Identifying Impostors:</h2>
+		<b>Observation:</b> Pay attention to player movements, interactions, and alibis. Suspicious behavior may include wandering aimlessly, avoiding tasks, or being overly aggressive.<br>
+		<b>Security Cameras:</b> Utilize security cameras strategically placed around the map to observe activity and catch Impostors in the act.
+		<h2>Surviving as a Crewmate:</h2>
+		<b>Stay Together:</b> Stick with other players whenever possible to reduce the risk of being targeted by Impostors.<br>
+		<b>Emergency Meetings:</b> Call emergency meetings if you witness suspicious behavior or have vital information to share. Communication is key to identifying Impostors.<br>
+		<h2>Playing as an Impostor:</h2>
+		<b>Blend In:</b> Act like a Crewmate, complete tasks, and avoid drawing attention to yourself.<br>
+		<b>Sabotage:</b> Use sabotage to create chaos and distract Crewmates while you hunt for opportunities to eliminate them.<br>
+		<b>Alibi:</b> Establish a believable alibi by pretending to complete tasks and providing plausible explanations for your actions.<br>
+		<h2>Communication and Strategy:</h2>
+		<b>Discussion Phase:</b> Use the discussion phase to share information, raise suspicions, and defend yourself or accuse others.<br>
+		<b>Voice Chat:</b> If playing with friends, consider using voice chat for real-time communication and coordination.<br>
+		<b>Mind Games:</b> Employ psychological tactics to manipulate and deceive other players, whether you're a Crewmate or Impostor.<br>
+		<h2>Learning from Experience:</h2>
+		<b>Trial and Error:</b> Learn from each game and adapt your strategies based on the outcome.<br>
+		<b>Observation:</b> Pay attention to how other players behave as Crewmates and Impostors to improve your own gameplay.<br>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Gaming Hub</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html> <!-- Declares the document type and version of HTML -->
+<html lang="en"> <!-- Specifies the language of the document -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Sets the character encoding for the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Sets the viewport properties for responsive design -->
+    <title>Gaming Hub</title> <!-- Sets the title of the document -->
+
+    <!-- Internal CSS styles -->
+    <style>
+        /* Styles for the body element */
+        body {
+            font-family: 'Roboto Condensed', sans-serif; /* Sets the font family for the body text */
+            background-image: url('bg.jpg'); /* Sets the background image */
+            background-size: cover; /* Ensures the background image covers the entire viewport */
+            background-repeat: no-repeat; /* Prevents background image from repeating */
+            background-attachment: fixed; /* Fixes the background image position */
+            background-position: center; /* Centers the background image */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+            background-color: #f0f0f0; /* Sets a fallback background color */
+        }
+
+        /* Styles for the header element */
+        header {
+            background-color: #007bff; /* Sets the background color of the header */
+            color: #fff; /* Sets the text color of the header */
+            padding: 12px; /* Adds padding around the header content */
+            text-align: center; /* Centers the text in the header */
+            width: 100%; /* Sets the width of the header to 100% */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a box shadow to the header */
+            transition: top 0.3s ease; /* Adds transition effect to the header */
+        }
+
+        /* Styles for the navigation menu */
+        nav {
+            display: flex; /* Displays the navigation items in a row */
+            justify-content: center; /* Centers the navigation items */
+            font-size: 20px; /* Sets the font size of the navigation items */
+        }
+
+        /* Styles for the navigation links */
+        nav a {
+            color: #fff; /* Sets the text color of the navigation links */
+            text-decoration: none; /* Removes underline from the navigation links */
+            padding: 15px 35px; /* Adds padding around the navigation links */
+            position: relative; /* Sets the position of the navigation links */
+            font-weight: bold; /* Sets the font weight of the navigation links */
+        }
+
+        /* Styles for the navigation links on hover */
+        nav a:hover {
+            background-color: #0056b3; /* Changes background color on hover */
+        }
+
+        /* Styles for the dropdown menu */
+        .dropdown {
+            position: relative; /* Sets the position of the dropdown */
+            display: inline-block; /* Displays the dropdown as inline block */
+            margin-top: 15px; /* Adds margin on top */
+        }
+
+        /* Styles for the dropdown content */
+        .dropdown-content {
+            display: block; /* Displays the dropdown content as block */
+            position: absolute; /* Positions the dropdown content absolutely */
+            background-color: #007bff; /* Sets the background color of the dropdown content */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Adds shadow to the dropdown content */
+            z-index: 1; /* Sets the stacking order of the dropdown content */
+            top: 38px; /* Sets the top position of the dropdown content */
+            opacity: 0; /* Makes the dropdown content initially invisible */
+            transition: opacity 0.3s ease, max-height 0.3s ease; /* Adds transition effect */
+            max-height: 0; /* Initially hides the dropdown content */
+            overflow: hidden; /* Hides overflowing content */
+        }
+
+        /* Styles for the dropdown content on hover */
+        .dropdown:hover .dropdown-content {
+            opacity: 1; /* Makes the dropdown content visible on hover */
+            max-height: 1500px; /* Adjusts the height of the dropdown content */
+        }
+
+        /* Styles for the dropdown content links */
+        .dropdown-content a {
+            color: #fff; /* Sets the text color of the dropdown options */
+            text-decoration: none; /* Removes underline from the dropdown options */
+            display: block; /* Displays the dropdown options as block */
+            padding: 20px 30px; /* Adds padding around the dropdown options */
+        }
+
+        /* Container styles */
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Sets the background color with opacity */
+            max-width: 1200px; /* Sets the maximum width of the container */
+            margin: 0 auto; /* Centers the container horizontally */
+            padding: 1px 10px; /* Adds padding to the container */
+            text-align: center; /* Centers the content inside the container */
+            border-radius: 15px; /* Adds rounded corners to the container */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Adds shadow to the container */
+        }
+
+        /* Styles for the hero section */
+        .hero {
+            color: #fff; /* Sets the text color of the hero section */
+            padding: 50px 0; /* Adds padding to the hero section */
+            text-align: center; /* Centers the content inside the hero section */
+            font-size: 25px; /* Sets the font size of the text in the hero section */
+            display: flex; /* Displays the hero section content as flex */
+            flex-direction: column; /* Arranges the content in a column */
+            align-items: center; /* Centers the items horizontally */
+        }
+
+        /* Styles for the hero section headings */
+        .hero h1 {
+            font-size: 75px; /* Sets the font size of the heading */
+            margin-bottom: 20px; /* Adds margin at the bottom of the heading */
+        }
+
+        .hero h2 {
+            font-size: 45px; /* Sets the font size of the subheading */
+            margin-bottom: 20px; /* Adds margin at the bottom of the subheading */
+        }
+
+        .hero p {
+            font-size: 20px; /* Sets the font size of the paragraph */
+            margin-bottom: 40px; /* Adds margin at the bottom of the paragraph */
+        }
+
+        /* Call-to-action button styles */
+        .cta-button {
+            display: inline-block; /* Displays the button as inline block */
+            padding: 15px 30px; /* Adds padding around the button */
+            background-color: #ff5722; /* Sets the background color of the button */
+            color: #fff; /* Sets the text color of the button */
+            text-decoration: none; /* Removes underline from the button */
+            font-weight: bold; /* Sets the font weight of the button */
+            border-radius: 5px; /* Adds rounded corners to the button */
+            font-size: 18px; /* Sets the font size of the button */
+            transition: background-color 0.3s ease; /* Adds transition effect */
+        }
+
+        /* Styles for the button on hover */
+        .cta-button:hover {
+            background-color: #e64a19; /* Changes background color on hover */
+        }
+
+        /* Styles for the footer element */
+        footer {
+            background-color: #007bff; /* Sets the background color of the footer */
+            color: #fff; /* Sets the text color of the footer */
+            text-align: center; /* Centers the content inside the footer */
+            padding: 7px 0; /* Adds padding to the footer content */
+            font-size: 20px; /* Sets the font size of the footer text */
+            font-weight: bold; /* Sets the font weight of the footer text */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- Navigation links -->
+            <a href="home.html">Home</a>
+            <a href="games.html">Games</a>
+            <a href="news.html">News</a>
+
+            <!-- Dropdown for FAQ -->
+            <div class="dropdown">
+                <a href="#" class="dropbtn">FAQ</a>
+                <div class="dropdown-content">
+                    <!-- Dropdown options for FAQ -->
+                    <a href="faq/minecraft.html">Minecraft</a>
+                    <a href="faq/gta5.html">GTA V</a>
+                    <a href="faq/rdr2.html">Red Dead Redemption II</a>
+                    <a href="faq/amongus.html">Among Us</a>
+                    <a href="faq/pubg.html">PUBG</a>
+                    <a href="faq/lastofus.html">Last of Us</a>
+                    <a href="faq/cyberpunk.html">Cyberpunk</a>
+                    <a href="faq/spiderman2.html">Spiderman 2</a>
+                    <a href="faq/fh5.html">Forza Horizon 5</a>
+                    <a href="faq/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+
+            <!-- Dropdown for Guides -->
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Guides</a>
+                <div class="dropdown-content">
+                    <!-- Dropdown options for Guides -->
+                    <a href="guides/minecraft.html">Minecraft</a>
+                    <a href="guides/gta5.html">GTA V</a>
+                    <a href="guides/rdr2.html">Red Dead Redemption II</a>
+                    <a href="guides/amongus.html">Among Us</a>
+                    <a href="guides/pubg.html">PUBG</a>
+                    <a href="guides/lastofus.html">Last of Us</a>
+                    <a href="guides/cyberpunk.html">Cyberpunk</a>
+                    <a href="guides/spiderman2.html">Spiderman 2</a>
+                    <a href="guides/fh5.html">Forza Horizon 5</a>
+                    <a href="guides/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+
+            <!-- Navigation links -->
+            <a href="aboutus.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- Container with about us information -->
+            <div class="container" style="margin-bottom: 75px;">
+                <h1>About Us</h1> <!-- Heading for the about us section -->
+                <p>Welcome to GameHub! We’re a team of four gaming enthusiasts who share a common love for all things gaming. Let’s introduce ourselves:</p> <!-- Introduction paragraph -->
+            </div>
+
+            <!-- Container with information about team member Humza -->
+            <div class="container" style="margin-bottom: 75px;">
+                <div style="float: left; padding: 25px;">
+                    <img src="pics/humza.jpg" style="max-width:500px; max-height:500px; border-radius: 25px; margin-right: 35px;">
+                </div>
+                <div style="float: left; text-align: left; margin-top:20px;">
+                    <!-- Information about team member -->
+                    <p style="font-size: 30px;"><b>Name:</b> Humza Asim</p>
+                    <p style="font-size: 30px;"><b>Age:</b> 13</p>
+                    <p style="font-size: 30px;"><b>Profession:</b> Programmer</p>
+                    <p style="font-size: 30px;"><b>Role:</b> Wrote main website code, made<br>animations, images, content<br>and made small tweaks.</p>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+            <!-- Container with information about team member Ayan -->
+            <div class="container" style="margin-bottom: 75px;">
+                <div style="float: left; padding: 25px;">
+                    <img src="pics/ayan.jpg" style="width:500px; height:500px; border-radius: 25px; margin-right: 35px;">
+                </div>
+                <div style="float: left; text-align: left; margin-top:20px;">
+                    <!-- Information about team member -->
+                    <p style="font-size: 30px;"><b>Name:</b> Ayan Nouman</p>
+                    <p style="font-size: 30px;"><b>Age:</b> 13</p>
+                    <p style="font-size: 30px;"><b>Profession:</b> Photoshop</p>
+                    <p style="font-size: 30px;"><b>Role:</b> Provided images, ideas, and<br>other content.</p>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+            <!-- Container with information about team member Mustafa -->
+            <div class="container" style="margin-bottom: 75px;">
+                <div style="float: left; padding: 25px;">
+                    <img src="pics/mustafa.jpg" style="width:500px; height:500px; border-radius: 25px; margin-right: 35px;">
+                </div>
+                <div style="float: left; text-align: left; margin-top:20px;">
+                    <!-- Information about team member -->
+                    <p style="font-size: 30px;"><b>Name:</b> Mustafa Faraz</p>
+                    <p style="font-size: 30px;"><b>Age:</b> 14</p>
+                    <p style="font-size: 30px;"><b>Profession:</b> N/A</p>
+                    <p style="font-size: 30px;"><b>Role:</b> Provided News, Reviews, Images<br>and Content</p>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+            <!-- Container with information about team member Haris -->
+            <div class="container" style="margin-bottom: 75px;">
+                <div style="float: left; padding: 25px;">
+                    <img src="pics/haris.jpg" style="width:500px; height:500px; border-radius: 25px; margin-right: 35px;">
+                </div>
+                <div style="float: left; text-align: left; margin-top:20px;">
+                    <!-- Information about team member -->
+                    <p style="font-size: 30px;"><b>Name:</b> Haris Waheed</p>
+                    <p style="font-size: 30px;"><b>Age:</b> 14</p>
+                    <p style="font-size: 30px;"><b>Profession:</b> N/A</p>
+                    <p style="font-size: 30px;"><b>Role:</b> Provided News, Reviews and Content</p>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2024 Gaming Hub</p> <!-- Copyright information -->
+    </footer>
+</body>
+
+</html>

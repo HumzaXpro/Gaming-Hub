@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Hub</title>
+    <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #fff;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: top 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 35px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        nav a:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover:before {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        h1, h2 {
+            color: #007bff;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff5722;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .button {
+            background: #ffcc00;
+            color: #000;
+            width: 200px;
+            height: 50px;
+            font-weight: bold;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.3s ease-in-out;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button_content {
+            color: #000;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+  	    position: relative;
+  	    display: inline-block;
+  	    margin-top: 15px; /* Adjust this value as needed */
+	}
+
+	.dropdown-content {
+ 	    display: block;
+  	    position: absolute;
+  	    background-color: #007bff;
+  	    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+ 	    z-index: 1;
+ 	    top: 38px;
+ 	    opacity: 0;
+ 	    transition: opacity 0.3s ease, max-height 0.3s ease; /* Add max-height transition */
+ 	    max-height: 0; /* Initially hide the dropdown */
+ 	    overflow: hidden; /* Hide overflowing content */
+	}
+
+	.dropdown:hover .dropdown-content {
+  	    opacity: 1;
+  	    max-height: 1500px; /* Adjust the value to accommodate your dropdown content */
+	}
+
+        .dropdown-content a {
+          color: #fff; /* Set text color for dropdown options */
+          text-decoration: none;
+          display: block;
+          padding: 20px 30px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: left;
+            margin-left: 35px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../home.html">Home</a>
+            <a href="../games.html">Games</a>
+            <a href="../news.html">News</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">FAQ</a>
+                <div class="dropdown-content">
+                    <a href="../faq/minecraft.html">Minecraft</a>
+                    <a href="../faq/gta5.html">GTA V</a>
+                    <a href="../faq/rdr2.html">Red Dead Redemption II</a>
+                    <a href="../faq/amongus.html">Among Us</a>
+                    <a href="../faq/pubg.html">PUBG</a>
+                    <a href="../faq/lastofus.html">Last of Us</a>
+                    <a href="../faq/cyberpunk.html">Cyberpunk</a>
+                    <a href="../faq/spiderman2.html">Spiderman 2</a>
+                    <a href="../faq/fh5.html">Forza Horizon 5</a>
+                    <a href="../faq/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Guides</a>
+                <div class="dropdown-content">
+                    <a href="minecraft.html">Minecraft</a>
+                    <a href="gta5.html">GTA V</a>
+                    <a href="rdr2.html">Red Dead Redemption II</a>
+                    <a href="amongus.html">Among Us</a>
+                    <a href="pubg.html">PUBG</a>
+                    <a href="lastofus.html">Last of Us</a>
+                    <a href="cyberpunk.html">Cyberpunk</a>
+                    <a href="spiderman2.html">Spiderman 2</a>
+                    <a href="fh5.html">Forza Horizon 5</a>
+                    <a href="fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <a href="../aboutus.html">About</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container" style="padding: 50px 50px; font-size:17px;">
+            	<h1>LAST OF US GUIDES</h1>
+		<b>Post-Apocalyptic World:</b> The Last of Us is set in a world devastated by a fungal pandemic that turns humans into aggressive creatures known as Infected. Survivors struggle to survive in this harsh and dangerous environment.<br>
+		<h2>Gameplay Mechanics:</h2>
+		<b>Survival and Stealth:</b> Emphasizing stealth and resource management, players must scavenge for supplies, avoid detection by both Infected and hostile survivors, and carefully plan their actions to survive.<br>
+		<b>Combat:</b> Engage in intense combat encounters against both human enemies and Infected. Utilize firearms, melee weapons, crafting, and environmental traps to overcome challenges.<br>
+		<h2>Character Abilities and Upgrades:</h2>
+		<b>Joel and Ellie:</b> Play as Joel, a hardened survivor, and Ellie, a young girl with a mysterious past. Each character has unique abilities and skills that can be upgraded throughout the game.<br>
+		<b>Skill Trees:</b> Improve Joel's combat prowess, crafting abilities, and survival skills through skill trees that allow players to customize their playstyle.<br>
+		<h2>Exploration and Story:</h2>
+		<b>Narrative-Driven Gameplay:</b> Experience a gripping narrative as Joel and Ellie journey across the United States in search of safety and answers. Explore abandoned cities, forests, and other environments while uncovering the truth behind the pandemic.<br>
+		<b>Environmental Storytelling:</b> Discover hidden lore, notes, and clues scattered throughout the world that provide insight into the events leading up to the apocalypse and the lives of other survivors.<br>
+		<h2>Crafting and Resource Management:</h2>
+		<b>Crafting:</b> Collect materials such as scraps, pills, and chemicals to craft essential items like health kits, shivs, and Molotov cocktails. Crafting plays a crucial role in survival and combat.<br>
+		<b>Resource Scavenging:</b> Search every nook and cranny for supplies, including ammunition, food, and materials. Manage your inventory wisely, as resources are scarce and must be used strategically.<br>
+		<h2>Stealth and Enemy Encounters:</h2>
+		<b>Stealth Gameplay:</b> Use stealth to avoid detection by enemies and sneak past threats undetected. Use cover, distractions, and silent takedowns to eliminate foes silently.<br>
+		<b>Enemy AI:</b> Be mindful of enemy behavior and patrol patterns. Human enemies are intelligent and will react to your actions, while Infected pose a relentless and unpredictable threat.<br>
+		<h2>Survival Tips:</h2>
+		<b>Conservation:</b> Conserve ammunition and resources whenever possible. Avoid unnecessary confrontations and prioritize stealth and evasion over direct combat.<br>
+		<b>Adaptation:</b> Adapt to the evolving challenges of the environment and enemies. Experiment with different strategies and approaches to overcome obstacles and threats.<br>
+		<h2>Emotional Impact:</h2>
+		<b>Character Development:</b> Invest in the deep and complex relationships between characters, particularly Joel and Ellie, as they grapple with loss, trauma, and survival in a world devoid of hope.<br>
+		<b>Atmosphere and Immersion:</b> Immerse yourself in the atmospheric world of The Last of Us, which combines stunning visuals, haunting music, and emotional storytelling to create a truly unforgettable experience.<br>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Gaming Hub</p>
+    </footer>
+</body>
+</html>

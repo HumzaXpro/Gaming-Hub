@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Hub</title>
+    <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: top 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 35px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        nav a:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover:before {
+            width: 100%;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+  	    position: relative;
+  	    display: inline-block;
+  	    margin-top: 15px; /* Adjust this value as needed */
+	}
+
+	.dropdown-content {
+ 	    display: block;
+  	    position: absolute;
+  	    background-color: #007bff;
+  	    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+ 	    z-index: 1;
+ 	    top: 38px;
+ 	    opacity: 0;
+ 	    transition: opacity 0.3s ease, max-height 0.3s ease; /* Add max-height transition */
+ 	    max-height: 0; /* Initially hide the dropdown */
+ 	    overflow: hidden; /* Hide overflowing content */
+	}
+
+	.dropdown:hover .dropdown-content {
+  	    opacity: 1;
+  	    max-height: 1500px; /* Adjust the value to accommodate your dropdown content */
+	}
+
+        .dropdown-content a {
+          color: #fff; /* Set text color for dropdown options */
+          text-decoration: none;
+          display: block;
+          padding: 20px 30px;
+        }
+            /* Container styles */
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Grey with 70% opacity */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1px 10px;
+            text-align: center;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Drop shadow for depth */
+        }
+
+        /* Hero section styles */
+        .hero {
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 75px;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* Call-to-action button styles */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff5722;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease; /* Add a smooth hover transition */
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 7px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .contact-info li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .contact-info b {
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .section p {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+         .des {
+             font-size: 12px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .button {
+            background: white;
+            color: #ffffff;
+            width: 240px;
+            height: 327px;
+            font-weight: bold;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.3s ease-in-out;
+            margin-top: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        .button_content {
+            color: black;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .button:hover {transform: scale(1.1)}
+
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: left;
+            margin-left: 35px;
+            font-size: 25px;
+        }
+
+	a {
+	    color: white;
+	    text-decoration: none;
+	}
+
+	a:hover {
+	    text-decoration: underline;
+	}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="home.html" style="text-decoration: none;">Home</a>
+            <a href="games.html" style="text-decoration: none;">Games</a>
+            <a href="news.html" style="text-decoration: none;">News</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn" style="text-decoration: none;">FAQ</a>
+                <div class="dropdown-content" style="text-decoration: none;">
+                    <a href="faq/minecraft.html" style="text-decoration: none;">Minecraft</a>
+                    <a href="faq/gta5.html" style="text-decoration: none;">GTA V</a>
+                    <a href="faq/rdr2.html" style="text-decoration: none;">Red Dead Redemption II</a>
+                    <a href="faq/amongus.html" style="text-decoration: none;">Among Us</a>
+                    <a href="faq/pubg.html" style="text-decoration: none;">PUBG</a>
+                    <a href="faq/lastofus.html" style="text-decoration: none;">Last of Us</a>
+                    <a href="faq/cyberpunk.html" style="text-decoration: none;">Cyberpunk</a>
+                    <a href="faq/spiderman2.html" style="text-decoration: none;">Spiderman 2</a>
+                    <a href="faq/fh5.html" style="text-decoration: none;">Forza Horizon 5</a>
+                    <a href="faq/fortnite.html" style="text-decoration: none;">Fortnite</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="dropbtn" style="text-decoration: none;">Guides</a>
+                <div class="dropdown-content">
+                    <a href="guides/minecraft.html" style="text-decoration: none;">Minecraft</a>
+                    <a href="guides/gta5.html" style="text-decoration: none;">GTA V</a>
+                    <a href="guides/rdr2.html" style="text-decoration: none;">Red Dead Redemption II</a>
+                    <a href="guides/amongus.html" style="text-decoration: none;">Among Us</a>
+                    <a href="guides/pubg.html" style="text-decoration: none;">PUBG</a>
+                    <a href="guides/lastofus.html" style="text-decoration: none;">Last of Us</a>
+                    <a href="guides/cyberpunk.html" style="text-decoration: none;">Cyberpunk</a>
+                    <a href="guides/spiderman2.html" style="text-decoration: none;">Spiderman 2</a>
+                    <a href="guides/fh5.html" style="text-decoration: none;">Forza Horizon 5</a>
+                    <a href="guides/fortnite.html" style="text-decoration: none;">Fortnite</a>
+                </div>
+            </div>
+            <a href="aboutus.html" style="text-decoration: none;">About</a>
+            <a href="contact.html" style="text-decoration: none;">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container" style="margin-bottom: 50px;">
+                <div style="float: left; padding: 25px;">
+		    <a href="news/minecraft.html">
+                    <img src="news/thumbnails/minecraft.jpg" style="width:300px; height:200px; border-radius: 5px;">
+		    </a>
+                </div>
+                <div style="float: left; text-align: left; margin-top:3px;">
+                    <p style="font-size: 30px; margin-right:15px;"><a href="news/minecraft.html"><b>MINECRAFT: MOJANG OFFICIALLY GAVE THE 1.21<br>UPDATE A TITLE: THE TRICKY TRAILS UPDATE</b></a></p>
+		    <p style="font-size: 18px; margin-right:15px;">On April 26, Mojang officially gave the 1.21 update a title: the Tricky Trials update,<br>signaling how substantial the update is compared to previous ones. If you want to<br>know about what this update has to offer ahead of its official arrival, then here is....</p>
+                </div>
+                <div style="clear: both;"></div>
+	    </div>
+
+	    <div class="container" style="margin-bottom: 75px;">
+                <div style="float: left; padding: 25px;">
+                    <a href="news/gta6.html"><img src="news/thumbnails/gta6.jpg" style="width:300px; height:200px; border-radius: 5px;"></a>
+                </div>
+                <div style="float: left; text-align: left; margin-top:3px;">
+                    <p style="font-size: 28px; margin-right:15px;"><b><a href="news/gta6.html">THE GTA 6 TRAILER IS HERE AND IT HAS CONFIRMED<br>LOCATIONS, CHARACTERS AND RELEASE WINDOW</b></a></p>
+		    <p style="font-size: 18px; margin-right:15px;">GTA 6 is coming in 2025, with Rockstar Games taking us back to the sun-soaked streets<br>of Vice City. The reveal of the first official GTA 6 trailer gave us a pretty spectacular look<br>at Leonida, hinting towards some of the wild sights and sounds that the state will have....</p>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+
+	    <div class="container" style="margin-bottom: 75px;">
+                <div style="float: left; padding: 25px;">
+                    <a href="news/helldivers2.html"><img src="news/thumbnails/helldivers2.jpg" style="width:300px; height:200px; border-radius: 5px;"></a>
+                </div>
+                <div style="float: left; text-align: left; margin-top:3px;">
+                    <p style="font-size: 28px; margin-right:15px;"><b><a href="news/helldivers2.html">HELLDIVERS 2 HAS REACHED AN IMPRESSIVE<br>MILESTONE, ANALYST REVEALS</b></a></p>
+		    <p style="font-size: 18px; margin-right:15px;">Helldivers 2 has achieved remarkable success following its launch earlier this year,<br>partly due to its availability on PC. Helldivers 2, a cooperative third-person shooter<br>developed by Arrowhead Game Studios and published by Sony, launched....</p>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <p>&copy; 2024 Gaming Hub</p>
+    </footer>
+</body>
+</html>

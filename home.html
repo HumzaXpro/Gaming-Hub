@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- Declares the character encoding for the document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configures viewport settings for mobile devices -->
+    <title>Gaming Hub</title> <!-- Sets the title of the webpage -->
+    <style>
+        body {
+            font-family: 'Roboto Condensed', sans-serif; /* Sets the font family for the entire document */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+            background-color: #f0f0f0; /* Sets background color */
+            background-image: url('bg.jpg'); /* Sets background image */
+            background-size: cover; /* Ensures the background image covers the entire viewport */
+            background-repeat: no-repeat; /* Prevents background image from repeating */
+            background-attachment: fixed; /* Fixes background image in place */
+            background-position: center; /* Centers the background image */
+        }
+
+        header {
+            background-color: #007bff; /* Sets background color for the header */
+            color: #fff; /* Sets text color for the header */
+            padding: 12px; /* Adds padding inside the header */
+            text-align: center; /* Aligns text in the center of the header */
+            width: 100%; /* Sets the width of the header to 100% */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds shadow effect to the header */
+            transition: top 0.3s ease; /* Adds transition effect for smooth animation */
+        }
+
+        nav {
+            display: flex; /* Makes the navigation links display in a row */
+            justify-content: center; /* Centers the navigation links */
+            font-size: 20px; /* Sets font size for the navigation links */
+        }
+
+        nav a {
+            color: #fff; /* Sets text color for navigation links */
+            text-decoration: none; /* Removes underline from navigation links */
+            padding: 15px 35px; /* Adds padding around navigation links */
+            position: relative; /* Sets position relative for navigation links */
+            font-weight: bold; /* Sets font weight for navigation links */
+        }
+
+        nav a:hover {
+            background-color: #0056b3; /* Changes background color on hover */
+        }
+
+        nav a:before {
+            content: ''; /* Inserts content before each navigation link */
+            position: absolute; /* Sets position absolute for pseudo-element */
+            bottom: -2px; /* Aligns pseudo-element to the bottom */
+            left: 50%; /* Moves pseudo-element to the center horizontally */
+            transform: translateX(-50%); /* Centers pseudo-element horizontally */
+            width: 0; /* Sets initial width of pseudo-element to 0 */
+            height: 2px; /* Sets height of pseudo-element */
+            background-color: #fff; /* Sets color of pseudo-element */
+            transition: width 0.3s ease; /* Adds transition effect for width */
+        }
+
+        nav a:hover:before {
+            width: 100%; /* Expands width of pseudo-element on hover */
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative; /* Sets position relative for dropdown */
+            display: inline-block; /* Displays dropdown as inline block */
+            margin-top: 15px; /* Adds top margin to dropdown */
+        }
+
+        .dropdown-content {
+            display: block; /* Displays dropdown content as block */
+            position: absolute; /* Sets position absolute for dropdown content */
+            background-color: #007bff; /* Sets background color for dropdown content */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Adds shadow effect to dropdown content */
+            z-index: 1; /* Sets z-index to ensure dropdown content appears above other elements */
+            top: 38px; /* Sets distance from top for dropdown content */
+            opacity: 0; /* Sets initial opacity to 0 */
+            transition: opacity 0.3s ease, max-height 0.3s ease; /* Adds transition effect for opacity and max-height */
+            max-height: 0; /* Hides dropdown content initially */
+            overflow: hidden; /* Hides overflowing content */
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1; /* Sets opacity to 1 on hover */
+            max-height: 1500px; /* Expands max-height to show dropdown content */
+        }
+
+        .dropdown-content a {
+            color: #fff; /* Sets text color for dropdown options */
+            text-decoration: none; /* Removes underline from dropdown options */
+            display: block; /* Displays dropdown options as block */
+            padding: 20px 30px; /* Adds padding to dropdown options */
+        }
+
+        /* Container styles */
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Sets background color with opacity */
+            max-width: 1200px; /* Sets maximum width for container */
+            margin: 0 auto; /* Centers container horizontally */
+            padding: 40px 20px; /* Adds padding inside container */
+            text-align: center; /* Aligns text in the center of container */
+            border-radius: 15px; /* Adds rounded corners to container */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Adds drop shadow effect to container */
+        }
+
+        /* Hero section styles */
+        .hero {
+            color: #fff; /* Sets text color for hero section */
+            padding: 50px 0; /* Adds padding around hero section */
+            text-align: center; /* Aligns text in the center of hero section */
+            font-size: 19px; /* Sets font size for text in hero section */
+            display: flex; /* Displays hero section content as flexbox */
+            flex-direction: column; /* Sets flex direction to column */
+            align-items: center; /* Centers items vertically in hero section */
+        }
+
+        .hero h1 {
+            font-size: 50px; /* Sets font size for main heading */
+            margin-bottom: 20px; /* Adds bottom margin to main heading */
+        }
+
+        .hero h2 {
+            font-size: 38px; /* Sets font size for secondary heading */
+            margin-bottom: 20px; /* Adds bottom margin to secondary heading */
+        }
+
+        .hero p {
+            font-size: 20px; /* Sets font size for paragraph text */
+            margin-bottom: 40px; /* Adds bottom margin to paragraphs */
+        }
+
+        /* Call-to-action button styles */
+        .cta-button {
+            display: inline-block; /* Displays button as inline block */
+            padding: 15px 30px; /* Adds padding to button */
+            background-color: #ff5722; /* Sets background color for button */
+            color: #fff; /* Sets text color for button */
+            text-decoration: none; /* Removes underline from button */
+            font-weight: bold; /* Sets font weight for button text */
+            border-radius: 5px; /* Adds rounded corners to button */
+            font-size: 18px; /* Sets font size for button text */
+            transition: background-color 0.3s ease; /* Adds transition effect for background color */
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19; /* Changes background color on hover */
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #007bff; /* Sets background color for footer */
+            color: #fff; /* Sets text color for footer */
+            text-align: center; /* Aligns text in the center of footer */
+            padding: 7px 0; /* Adds padding inside footer */
+            font-size: 20px; /* Sets font size for footer text */
+            font-weight: bold; /* Sets font weight for footer text */
+        }
+
+        footer ul {
+            list-style-type: none; /* Removes default list style */
+            padding: 0; /* Removes padding from unordered list */
+        }
+
+        footer ul li {
+            display: inline; /* Displays list items inline */
+            margin-right: 20px; /* Adds right margin between list items */
+        }
+
+        footer ul li a {
+            text-decoration: none; /* Removes underline from footer links */
+            color: #fff; /* Sets text color for footer links */
+        }
+
+        .contact-info {
+            margin-top: 20px; /* Adds top margin to contact information */
+            text-align: left; /* Aligns contact information to the left */
+        }
+
+        .contact-info li {
+            font-size: 18px; /* Sets font size for contact information */
+            margin-bottom: 10px; /* Adds bottom margin to contact information */
+            text-align: left; /* Aligns contact information to the left */
+        }
+
+        .contact-info b {
+            font-weight: bold; /* Sets font weight for bold text in contact information */
+            text-align: left; /* Aligns bold text to the left */
+        }
+
+        .section {
+            margin-bottom: 40px; /* Adds bottom margin to sections */
+            text-align: left; /* Aligns text to the left within sections */
+        }
+
+        .section h2 {
+            font-size: 25px; /* Sets font size for section headings */
+            margin-bottom: 20px; /* Adds bottom margin to section headings */
+            text-align: left; /* Aligns section headings to the left */
+        }
+
+        .section p {
+            font-size: 18px; /* Sets font size for paragraph text within sections */
+            line-height: 1.5; /* Sets line height for better readability */
+            text-align: left; /* Aligns text to the left within sections */
+        }
+
+        .des {
+            font-size: 12px; /* Sets font size for description text */
+            line-height: 1.5; /* Sets line height for better readability */
+            text-align: center; /* Aligns description text in the center */
+        }
+
+        .button {
+            background: white; /* Sets background color for buttons */
+            color: #ffffff; /* Sets text color for buttons */
+            width: 240px; /* Sets width for buttons */
+            height: 327px; /* Sets height for buttons */
+            font-weight: bold; /* Sets font weight for button text */
+            border: none; /* Removes border from buttons */
+            border-radius: 9px; /* Adds rounded corners to buttons */
+            cursor: pointer; /* Changes cursor to pointer on hover */
+            text-decoration: none; /* Removes underline from button */
+            font-size: 18px; /* Sets font size for button text */
+            transition: transform 0.3s ease-in-out; /* Adds transition effect for button transformation */
+            margin-top: 10px; /* Adds top margin to buttons */
+            margin-left: 20px; /* Adds left margin to buttons */
+            margin-right: 20px; /* Adds right margin to buttons */
+            margin-bottom: 10px; /* Adds bottom margin to buttons */
+        }
+
+        .button_content {
+            color: black; /* Sets text color for button content */
+            font-family: 'Press Start 2P', cursive; /* Sets font family for button content */
+        }
+
+        .button:hover {
+            transform: scale(1.1); /* Scales button size on hover */
+        }
+
+        .button-wrapper {
+            display: flex; /* Displays button wrapper as flexbox */
+            justify-content: center; /* Centers buttons horizontally */
+            margin-top: 20px; /* Adds top margin to button wrapper */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="games.html">Games</a>
+            <a href="news.html">News</a>
+            <!-- Dropdown for FAQ -->
+            <div class="dropdown">
+                <a href="#" class="dropbtn">FAQ</a>
+                <div class="dropdown-content">
+                    <a href="faq/minecraft.html">Minecraft</a>
+                    <a href="faq/gta5.html">GTA V</a>
+                    <a href="faq/rdr2.html">Red Dead Redemption II</a>
+                    <a href="faq/amongus.html">Among Us</a>
+                    <a href="faq/pubg.html">PUBG</a>
+                    <a href="faq/lastofus.html">Last of Us</a>
+                    <a href="faq/cyberpunk.html">Cyberpunk</a>
+                    <a href="faq/spiderman2.html">Spiderman 2</a>
+                    <a href="faq/fh5.html">Forza Horizon 5</a>
+                    <a href="faq/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <!-- Dropdown for Guides -->
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Guides</a>
+                <div class="dropdown-content">
+                    <a href="guides/minecraft.html">Minecraft</a>
+                    <a href="guides/gta5.html">GTA V</a>
+                    <a href="guides/rdr2.html">Red Dead Redemption II</a>
+                    <a href="guides/amongus.html">Among Us</a>
+                    <a href="guides/pubg.html">PUBG</a>
+                    <a href="guides/lastofus.html">Last of Us</a>
+                    <a href="guides/cyberpunk.html">Cyberpunk</a>
+                    <a href="guides/spiderman2.html">Spiderman 2</a>
+                    <a href="guides/fh5.html">Forza Horizon 5</a>
+                    <a href="guides/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <a href="aboutus.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container" style="text-align:left;">
+                <div style="text-align:center;"><h1>Welcome to Gaming Hub</h1><h2>Your Ultimate Gaming Spot!</h2></div>
+                
+                <!-- Introduction to Gaming Hub -->
+                <p>Step into the world of gaming excitement! At Gaming Hub, we're here to make gaming fun and easy for everyone. Whether you're new to gaming or a pro, we've got something for you.</p>
+                
+                <h2 style="text-align:center;">What We Offer:</h2>
+  
+                <!-- List of services offered -->
+                <b style="font-size:19px;">Stay Updated:</b> Keep up with all the latest gaming news and updates. From new releases to cool insider info, we've got the scoop on everything you need to know.<br>
+                <b style="font-size:19px;">Master Your Games:</b> Learn how to play like a champ with our easy-to-follow guides. We'll help you get better at your favorite games, no matter your skill level.<br>
+                <b style="font-size:19px;">Expert Reviews:</b> Find out which games are worth playing with our honest reviews. Our team of experts will tell you what they love (and don't love) about each game.<br>
+                <b style="font-size:19px;">Connect with Others:</b> Join our friendly community and chat with other gamers. Share tips, tricks, and stories about your gaming adventures.<br>
+                <b style="font-size:19px;">Exclusive Access:</b> Get special access to interviews, behind-the-scenes content, and early peeks at new games. It's all part of being a member of Gaming Hub.<br>
+
+                <h2 style="text-align:center;">Join Gaming Hub Today!</h2>
+
+                <!-- Call to action -->
+                <p>Whether you play on a console, computer, or phone, Gaming Hub is here to make gaming awesome for everyone. Come join us and level up your gaming experience! Discover the thrill of competitive gaming, learn new strategies, and connect with fellow gamers from around the world. The adventure awaits!</p>
+                
+                <!-- Examples of games with buttons -->
+                <h2>Here are some Examples:</h2>
+
+                <div class="button-wrapper">
+                    <!-- Button for Forza Horizon 5 -->
+                    <div class="button">
+                        <a href="games/fh5.html">
+                            <img src="logos/fh5.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+                            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                                <span style="float:left; margin-bottom:5px">Forza Horizon 5</span>
+                                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2021</span>
+                                <div style="clear:both"></div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Button for Call of Duty Modern Warfare -->
+                    <div class="button">
+                        <a href="games/cod-mw2.html">
+                            <img src="logos/cod-mw.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+                            <div class="button_content" style="font-size:12px; margin-left:3px; margin-bottom:3px">
+                                <span style="float:left; margin-bottom:5px">Call of Duty Modern Warfare</span>
+                                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2019</span>
+                                <div style="clear:both"></div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Button for Spiderman 2 -->
+                    <div class="button">
+                        <a href="games/spiderman2.html">
+                            <img src="logos/spiderman2.jpg" style="width:100%; height:92%; border-top-right-radius:8px; border-top-left-radius:8px;">
+                            <div class="button_content" style="font-size:15px; margin-left:3px; margin-bottom:3px">
+                                <span style="float:left; margin-bottom:5px">Spiderman 2</span>
+                                <span style="float:right; font-size:12px; margin-top:4px; margin-right:3px">2023</span>
+                                <div style="clear:both"></div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Button for View More -->
+                    <div class="button" style="background-color: rgba(0, 0, 0, 0.4)">
+                        <a href="games.html" style="text-decoration: none; color: inherit;">
+                            <div class="button_content" style="font-size:50px; color:white;">
+                                <span style="float:left; margin-top:70px; text-align: center;">View More+</span>
+                                <div style="clear:both"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gaming Hub</p> <!-- Copyright information -->
+    </footer>
+</body>
+</html>

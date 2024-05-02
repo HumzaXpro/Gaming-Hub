@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Hub - Contact Us</title>
+    <style>
+        body {
+            background-image: url('bg.jpg'); /* Sets background image */
+            background-size: cover; /* Covers the entire background */
+            background-repeat: no-repeat; /* Prevents background image from repeating */
+            background-attachment: fixed; /* Fixes background position */
+            background-position: center; /* Centers background image */
+            font-family: 'Roboto Condensed', sans-serif; /* Sets font family for text */
+            color: #333; /* Sets text color */
+            margin: 0; /* Removes default margin */
+            padding: 0; /* Removes default padding */
+        }
+
+        header {
+            background-color: #007bff; /* Sets background color for header */
+            color: #fff; /* Sets text color for header */
+            padding: 12px; /* Adds padding inside header */
+            text-align: center; /* Aligns text in the center of header */
+            width: 100%; /* Sets header width to 100% */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds shadow effect to header */
+            transition: top 0.3s ease; /* Adds transition effect for header */
+        }
+
+        nav {
+            display: flex; /* Displays navigation items as flexbox */
+            justify-content: center; /* Centers navigation items horizontally */
+            font-size: 20px; /* Sets font size for navigation items */
+        }
+
+        nav a {
+            color: #fff; /* Sets text color for navigation links */
+            text-decoration: none; /* Removes underline from navigation links */
+            padding: 15px 35px; /* Adds padding inside navigation links */
+            position: relative; /* Sets position relative */
+            font-weight: bold; /* Sets font weight for navigation links */
+        }
+
+        nav a:hover {
+            background-color: #0056b3; /* Changes background color on hover */
+        }
+
+        nav a:before {
+            content: ''; /* Inserts content before navigation links */
+            position: absolute; /* Sets position absolute */
+            bottom: -2px; /* Aligns bottom position */
+            left: 50%; /* Aligns left position */
+            transform: translateX(-50%); /* Centers horizontally */
+            width: 0; /* Initial width */
+            height: 2px; /* Sets height for hover effect */
+            background-color: #fff; /* Sets background color for hover effect */
+            transition: width 0.3s ease; /* Adds transition effect for hover */
+        }
+
+        nav a:hover:before {
+            width: 100%; /* Increases width on hover */
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative; /* Sets position relative for dropdown */
+            display: inline-block; /* Displays dropdown as inline block */
+            margin-top: 15px; /* Adds top margin for dropdown */
+        }
+
+        .dropdown-content {
+            display: block; /* Displays dropdown content as block */
+            position: absolute; /* Sets position absolute for dropdown content */
+            background-color: #007bff; /* Sets background color for dropdown content */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Adds shadow effect */
+            z-index: 1; /* Sets z-index to keep dropdown on top */
+            top: 38px; /* Sets top position for dropdown content */
+            opacity: 0; /* Initially hides dropdown content */
+            transition: opacity 0.3s ease, max-height 0.3s ease; /* Adds transition effect */
+            max-height: 0; /* Initially hides dropdown content */
+            overflow: hidden; /* Hides overflowing content */
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1; /* Shows dropdown content on hover */
+            max-height: 1500px; /* Sets max height for dropdown content */
+        }
+
+        .dropdown-content a {
+            color: #fff; /* Sets text color for dropdown options */
+            text-decoration: none; /* Removes underline from dropdown options */
+            display: block; /* Displays dropdown options as block */
+            padding: 20px 30px; /* Adds padding inside dropdown options */
+        }
+
+        h1 {
+            font-size: 36px; /* Sets font size for heading 1 */
+        }
+
+        main {
+            max-width: 800px; /* Sets maximum width for main content */
+            margin: 20px auto; /* Sets margin for main content */
+            padding: 20px; /* Adds padding inside main content */
+            background-color: rgba(255, 255, 255, 0.9); /* Sets background color for main content */
+            border-radius: 10px; /* Adds border radius to main content */
+        }
+
+        section {
+            margin-bottom: 20px; /* Adds bottom margin for sections */
+        }
+
+        h2 {
+            font-size: 24px; /* Sets font size for heading 2 */
+        }
+
+        ul {
+            list-style-type: none; /* Removes default list style */
+            padding: 0; /* Removes padding from unordered list */
+        }
+
+        li {
+            margin-bottom: 10px; /* Adds bottom margin for list items */
+        }
+
+        label {
+            display: block; /* Displays labels as block */
+            font-weight: bold; /* Sets font weight for labels */
+            margin-bottom: 5px; /* Adds bottom margin for labels */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%; /* Sets width to 100% */
+            padding: 10px; /* Adds padding inside input fields */
+            margin-bottom: 10px; /* Adds bottom margin for input fields */
+            border: 1px solid #ccc; /* Sets border for input fields */
+            border-radius: 5px; /* Adds border radius to input fields */
+        }
+
+        input[type="submit"] {
+            background-color: #333; /* Sets background color for submit button */
+            color: #fff; /* Sets text color for submit button */
+            padding: 10px 20px; /* Adds padding inside submit button */
+            border: none; /* Removes border from submit button */
+            border-radius: 5px; /* Adds border radius to submit button */
+            cursor: pointer; /* Changes cursor to pointer */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555; /* Changes background color on hover */
+        }
+
+        footer {
+            background-color: #007bff; /* Sets background color for footer */
+            color: #fff; /* Sets text color for footer */
+            text-align: center; /* Aligns text in the center of footer */
+            padding: 7px 0; /* Adds padding inside footer */
+            font-size: 20px; /* Sets font size for footer */
+            font-weight: bold; /* Sets font weight for footer */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="home.html">Home</a> <!-- Navigation link to Home page -->
+            <a href="games.html">Games</a> <!-- Navigation link to Games page -->
+            <a href="news.html">News</a> <!-- Navigation link to News page -->
+            <div class="dropdown"> <!-- Dropdown menu -->
+                <a href="#" class="dropbtn">FAQ</a> <!-- Dropdown toggle button -->
+                <div class="dropdown-content"> <!-- Dropdown content -->
+                    <!-- Dropdown options for frequently asked questions -->
+                    <a href="faq/minecraft.html">Minecraft</a>
+                    <a href="faq/gta5.html">GTA V</a>
+                    <a href="faq/rdr2.html">Red Dead Redemption II</a>
+                    <a href="faq/amongus.html">Among Us</a>
+                    <a href="faq/pubg.html">PUBG</a>
+                    <a href="faq/lastofus.html">Last of Us</a>
+                    <a href="faq/cyberpunk.html">Cyberpunk</a>
+                    <a href="faq/spiderman2.html">Spiderman 2</a>
+                    <a href="faq/fh5.html">Forza Horizon 5</a>
+                    <a href="faq/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            <div class="dropdown"> <!-- Another dropdown menu -->
+                <a href="#" class="dropbtn">Guides</a> <!-- Dropdown toggle button -->
+                <div class="dropdown-content"> <!-- Dropdown content -->
+                    <!-- Dropdown options for gaming guides -->
+                    <a href="guides/minecraft.html">Minecraft</a>
+                    <a href="guides/gta5.html">GTA V</a>
+                    <a href="guides/rdr2.html">Red Dead Redemption II</a>
+                    <a href="guides/amongus.html">Among Us</a>
+                    <a href="guides/pubg.html">PUBG</a>
+                    <a href="guides/lastofus.html">Last of Us</a>
+                    <a href="guides/cyberpunk.html">Cyberpunk</a>
+                    <a href="guides/spiderman2.html">Spiderman 2</a>
+                    <a href="guides/fh5.html">Forza Horizon 5</a>
+                    <a href="guides/fortnite.html">Fortnite</a>
+                </div>
+            </div>
+            </div>
+            <a href="aboutus.html">About</a> <!-- Navigation link to About page -->
+            <a href="contact.html">Contact</a> <!-- Navigation link to Contact page -->
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Connect with Us</h2>
+            <p></p>
+        </section>
+        <section>
+            <h2>Contact Information</h2>
+            <p>You can reach us through various channels:</p>
+            <div>
+                <b>Emails:</b>
+                <ul>
+                    <!-- Email contact links -->
+                    <li><a href="mailto:muhammadhumzaasim18@gmail.com">muhammadhumzaasim18@gmail.com </a></li>
+                    <li><a href="mailto:ayannouman630@gmailcom">ayannouman630@gmailcom</a></li>
+		    <li><a href="mailto:3244567mf@gmail.com">3244567mf@gmail.com</a></li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <h2>Send Us a Message</h2>
+            <p>If you prefer, you can use the contact form below to get in touch:</p>
+            <form action="submit_form.js" method="POST"> <!-- Form for sending a message -->
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required><br> <!-- Input field for name -->
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required><br> <!-- Input field for email -->
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br> <!-- Textarea for message -->
+
+                <input type="submit" value="Send Message"> <!-- Submit button to send message -->
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Gaming Hub</p> <!-- Footer with copyright information -->
+    </footer>
+</body>
+</html>
